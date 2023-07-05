@@ -1,4 +1,4 @@
-#axupimgs
+# axupimgs
 
 👀 [中文文档](https://github.com/Kori000/axupimgs/blob/main/README_Zh.md)
 

@@ -1,4 +1,4 @@
-#axupimgs
+# axupimgs
 
 🌏 [English](https://github.com/Kori000/axupimgs/blob/main/README.md)
 
