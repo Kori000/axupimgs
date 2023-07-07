@@ -1,5 +1,7 @@
 # axupimgs
 
+[![npm version](https://img.shields.io/npm/v/axupimgs.svg?style=flat-square)](https://www.npmjs.org/package/axupimgs)
+
 🌏 [English](https://github.com/Kori000/axupimgs/blob/main/README.md)
 
 ## 功能
