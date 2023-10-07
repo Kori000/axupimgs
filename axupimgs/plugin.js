@@ -8,8 +8,6 @@ tinymce.PluginManager.add('axupimgs', function (editor, url) {
     .match(/http[^]*/)[0]
     .trim()
 
-  console.log('地址????', fromUrl)
-
   const formFileName = fromUrl.split('axupimgs/')[1]
 
   const baseURL = fromUrl.replace(formFileName, 'upfiles.html')
