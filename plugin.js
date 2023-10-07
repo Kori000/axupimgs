@@ -2,17 +2,39 @@ tinymce.PluginManager.add('axupimgs', function (editor, url) {
   var pluginName = 'Ax多图片上传'
   window.axupimgs = {} //扔外部公共变量，也可以扔一个自定义的位置
 
-  var baseURL = tinymce.baseURL
-  var iframe1 = baseURL + '/plugins/axupimgs/upfiles.html'
-  axupimgs.many_images_upload_handler = editor.getParam('many_images_upload_handler', undefined, 'function')
-  axupimgs.images_upload_base_path = editor.getParam('images_upload_base_path', '', 'string')
-  axupimgs.axupimgs_filetype = editor.getParam('axupimgs_filetype', '.png,.gif,.jpg,.jpeg', 'string')
+  const e = new Error()
+  const fromUrl = e.stack
+    .match(/[^\n]+\.js/)[0]
+    .match(/http[^]*/)[0]
+    .trim()
+
+  console.log('地址????', fromUrl)
+
+  const formFileName = fromUrl.split('axupimgs/')[1]
+
+  const baseURL = fromUrl.replace(formFileName, 'upfiles.html')
+
+  axupimgs.many_images_upload_handler = editor.getParam(
+    'many_images_upload_handler',
+    undefined,
+    'function'
+  )
+  axupimgs.images_upload_base_path = editor.getParam(
+    'images_upload_base_path',
+    '',
+    'string'
+  )
+  axupimgs.axupimgs_filetype = editor.getParam(
+    'axupimgs_filetype',
+    '.png,.gif,.jpg,.jpeg',
+    'string'
+  )
   axupimgs.res = []
   var openDialog = function () {
     return editor.windowManager.openUrl({
       title: pluginName,
       size: 'large',
-      url: iframe1,
+      url: baseURL,
       buttons: [
         {
           type: 'cancel',
