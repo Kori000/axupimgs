@@ -1,6 +1,6 @@
 {
   "name": "axupimgs",
-  "version": "1.0.22",
+  "version": "1.0.3",
   "description": "Tinymce Plugin - Upload multiple images",
   "main": "index.js",
   "scripts": {

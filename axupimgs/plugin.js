@@ -2,15 +2,7 @@ tinymce.PluginManager.add('axupimgs', function (editor, url) {
   var pluginName = '多图片上传'
   window.axupimgs = {} //扔外部公共变量，也可以扔一个自定义的位置
 
-  const e = new Error()
-  const fromUrl = e.stack
-    .match(/[^\n]+\.js/)[0]
-    .match(/http[^]*/)[0]
-    .trim()
-
-  const formFileName = fromUrl.split('axupimgs/')[1]
-
-  const baseURL = fromUrl.replace(formFileName, 'upfiles.html')
+  const htmlUrl = '/tinymce/plugins/axupimgs/upfiles.html'
 
   axupimgs.many_images_upload_handler = editor.getParam(
     'many_images_upload_handler',
@@ -32,7 +24,7 @@ tinymce.PluginManager.add('axupimgs', function (editor, url) {
     return editor.windowManager.openUrl({
       title: pluginName,
       size: 'large',
-      url: baseURL,
+      url: htmlUrl,
       buttons: [
         {
           type: 'cancel',
